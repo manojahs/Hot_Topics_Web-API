@@ -20,3 +20,6 @@
 | **Authentication Check** | Verifies JWT signature                                            | Looks up session data in server store                    |
 | **Revocation**           | Harder (requires blacklist)                                       | Easy (delete session from server)                        |
 | **Used in**              | APIs, SPAs, mobile apps                                           | Traditional websites                                     |
+
+
+https://chatgpt.com/c/681a3186-59b0-8013-ac96-6265eeed7028
