@@ -126,6 +126,9 @@ app.Run();
 
 2) Custom Middleware
 ----------------------
+Using Invoke or InvokeAsync
+
+
 public class MyCustomMiddleware
 {
     private readonly RequestDelegate _next;
