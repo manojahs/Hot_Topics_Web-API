@@ -188,8 +188,8 @@ services.AddTransient<IEmailService, EmailService>();
 services.AddScoped<IRepository, Repository>();
 services.AddSingleton<ILogger, Logger>();
 
-
-
+Dependency Injection (DI) is a design pattern used to achieve loose coupling between classes.
+Instead of a class creating its dependencies, they are injected into it from the outside.
 
 
 
