@@ -1,5 +1,6 @@
 # Hot_Topics_Web-API
 ----------------------------
+```
 
 | Feature                | Stateless Protocol         | Stateful Protocol             |
 | ---------------------- | -------------------------- | ----------------------------- |
@@ -100,5 +101,82 @@ app.MapGet("/greet/{name}", (string name) => $"Hello, {name}!");
 
 // Define a POST endpoint
 app.MapPost("/add", (int a, int b) => a + b);
+
+Middleware
+------------
+Middleware is a piece of code that sits in the request pipeline.
+Each middleware can:
+
+Do something with the incoming request.
+Call the next middleware in the pipeline.
+Do something with the outgoing response.
+It’s like a chain of responsibility.
+
+2 Types of Middlware.
+1)Inline Middleware
+2)Custom Middleware
+
+1) Inline Middleware
+-----------------------
+Defined directly inside Program.cs using app.Use, app.Run,app.next etc.
+Good for small logic
+
+app.MapGet("/", () => "Hello World!");
+app.Run();
+
+2) Custom Middleware
+----------------------
+public class MyCustomMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public MyCustomMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // Before request
+        Console.WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
+
+        await _next(context); // Call the next middleware
+
+        // After response
+        Console.WriteLine($"Response Status: {context.Response.StatusCode}");
+    }
+}
+
+public static class MyCustomMiddlewareExtensions
+{
+    public static IApplicationBuilder UseMyCustomMiddleware(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<MyCustomMiddleware>();
+    }
+}
+
+
+app.UseMyCustomMiddleware();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
 
 
