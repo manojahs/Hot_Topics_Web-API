@@ -88,3 +88,17 @@ Primarily used in authentication and authorization. After a user logs in, the se
 OAuth
 --------
 OAuth is a framework/protocol for delegated authorization — it allows third-party apps to access a user’s data without sharing their password.
+
+Minimal Api
+--------------
+Minimal APIs are a lightweight way to build HTTP APIs in .NET 6 and later without the overhead of the full MVC (Model-View-Controller) or Razor Pages framework.
+Instead of creating controllers, actions, attributes, startup classes, you just map endpoints directly in Program.cs.
+
+app.MapGet("/", () => "Hello, World!");
+// Define a parameterized GET endpoint
+app.MapGet("/greet/{name}", (string name) => $"Hello, {name}!");
+
+// Define a POST endpoint
+app.MapPost("/add", (int a, int b) => a + b);
+
+
