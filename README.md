@@ -161,7 +161,14 @@ public static class MyCustomMiddlewareExtensions
 
 app.UseMyCustomMiddleware();
 
-
+Common Use Cases
+--------------------
+Logging
+Exception handling
+Authentication
+Response compression
+CORS
+Custom headers
 
 
 
