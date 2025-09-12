@@ -114,7 +114,7 @@ It’s like a chain of responsibility.
 
 2 Types of Middlware.
 1)Inline Middleware
-2)Custom Middleware
+2)Custom Middleware  
 
 1) Inline Middleware
 -----------------------
@@ -123,11 +123,12 @@ Good for small logic
 
 app.MapGet("/", () => "Hello World!");
 app.Run();
+app.UseMapController()  //It will call the controller
 
 2) Custom Middleware
 ----------------------
 Using Invoke or InvokeAsync
-
+You can create custom middleware using RequestDelegate.
 
 public class MyCustomMiddleware
 {
