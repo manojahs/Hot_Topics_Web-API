@@ -191,6 +191,41 @@ services.AddSingleton<ILogger, Logger>();
 Dependency Injection (DI) is a design pattern used to achieve loose coupling between classes.
 Instead of a class creating its dependencies, they are injected into it from the outside.
 
+// Step 1: Define abstraction
+public interface IMessageService
+{
+    void Send(string message);
+}
+
+// Step 2: Implement services
+public class EmailService : IMessageService
+{
+    public void Send(string message) => Console.WriteLine("Email: " + message);
+}
+
+public class SmsService : IMessageService
+{
+    public void Send(string message) => Console.WriteLine("SMS: " + message);
+}
+
+// Step 3: Inject dependency via constructor
+public class Notification
+{
+    private readonly IMessageService _messageService;
+
+    public Notification(IMessageService messageService)
+    {
+        _messageService = messageService;  // injected
+    }
+
+    public void Notify(string msg)
+    {
+        _messageService.Send(msg);
+    }
+}
+
+builder.Services.AddScoped<IMessageService, EmailService>();
+
 
 
 
