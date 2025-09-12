@@ -150,13 +150,10 @@ public class MyCustomMiddleware
     }
 }
 
-public static class MyCustomMiddlewareExtensions
-{
-    public static IApplicationBuilder UseMyCustomMiddleware(this IApplicationBuilder builder)
-    {
-        return builder.UseMiddleware<MyCustomMiddleware>();
-    }
-}
+program.cs
+
+builder.UseMiddleware<MyCustomMiddleware>();
+
 
 
 app.UseMyCustomMiddleware();
@@ -170,9 +167,14 @@ Response compression
 CORS
 Custom headers
 
-
-
-
+Handling exception in web api
+-----------------------------
+1. Try–Catch Inside Controllers (basic)
+2. Global Exception Handling Middleware ✅ (Recommended)
+Create custom middleware to catch all unhandled exceptions.
+3. Use Built-in UseExceptionHandler Middleware
+        app.UseExceptionHandler("/error"); // global handler route
+4. Using Exception Filters
 
 
 
