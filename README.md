@@ -226,6 +226,37 @@ public class Notification
 
 builder.Services.AddScoped<IMessageService, EmailService>();
 
+Routing
+-------------
+
+1)Convention-based → central route table, default MVC style.
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
+
+2)Attribute Routing → attributes on controllers/actions, flexible.
+
+[Route("api/[controller]")]
+public class ProductsController : ControllerBase
+{
+    [HttpGet("{id}")]
+    public IActionResult GetProduct(int id)
+    {
+        return Ok($"Product ID: {id}");
+    }
+}
+
+3)Endpoint Routing → modern unified system, also used in Minimal APIs.
+
+app.MapGet("/hello/{name}", (string name) => $"Hello {name}");
+
+
 
 
 
