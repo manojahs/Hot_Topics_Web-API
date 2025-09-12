@@ -242,6 +242,8 @@ app.UseEndpoints(endpoints =>
 
 2)Attribute Routing → attributes on controllers/actions, flexible.
 
+endpoints.MapControllers();
+
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
 {
