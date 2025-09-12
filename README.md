@@ -178,7 +178,7 @@ Create custom middleware to catch all unhandled exceptions.
 4. Using Exception Filters
 
 
-Q3. What are the different lifetimes in Dependency Injection (DI
+Q3. What are the different lifetimes in Dependency Injection (DI)
 
 Transient → new instance per request.
 Scoped → one instance per HTTP request.
