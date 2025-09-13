@@ -259,6 +259,20 @@ public class ProductsController : ControllerBase
 app.MapGet("/hello/{name}", (string name) => $"Hello {name}");
 
 
+Migration in dot net core
+--------------------------
+
+dotnet ef migrations add AddEmailToUser
+dotnet ef database update
+
+Rollback
+--------------
+dotnet ef database update MigrationName
+
+Rollback everything
+----------------
+dotnet ef database update 0
+
 
 
 
