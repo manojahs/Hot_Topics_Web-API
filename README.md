@@ -273,7 +273,25 @@ Rollback everything
 ----------------
 dotnet ef database update 0
 
+IEnumerable or IQuerable Difference
+---------------------------------------
+IEnumerable is for in-memory collection traversal; it queries all data and then filters in memory.
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+IEnumerable<int> query = numbers.Where(x => x > 2);
 
+foreach (var num in query)
+{
+    Console.WriteLine(num);  // filters in memory
+}
+
+
+IQueryable builds an expression tree and executes queries at the database/server level, so only required data is fetched.
+
+IQueryable<Employee> query = dbContext.Employees.Where(e => e.Salary > 5000);
+foreach (var emp in query)
+{
+    Console.WriteLine(emp.Name);  // filters in SQL, only matching rows come from DB
+}
 
 
 
