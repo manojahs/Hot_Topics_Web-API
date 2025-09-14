@@ -293,6 +293,13 @@ foreach (var emp in query)
     Console.WriteLine(emp.Name);  // filters in SQL, only matching rows come from DB
 }
 
+| Feature         | **Synchronous**                           | **Asynchronous**                         |
+| --------------- | ----------------------------------------- | ---------------------------------------- |
+| **Execution**   | One after another (blocking)              | Can run independently (non-blocking)     |
+| **Waiting**     | Caller must wait                          | Caller can continue doing other work     |
+| **Return Type** | Normal return value (`void`, `int`, etc.) | `Task`, `Task<T>`, or `ValueTask`        |
+| **Use Case**    | CPU-bound, quick operations               | I/O-bound, long-running operations       |
+| **Performance** | Can cause UI freezing, slow response      | More responsive apps, better scalability |
 
 
 
