@@ -301,8 +301,63 @@ foreach (var emp in query)
 | **Use Case**    | CPU-bound, quick operations               | I/O-bound, long-running operations       |
 | **Performance** | Can cause UI freezing, slow response      | More responsive apps, better scalability |
 
+Why do we need versioning and how to use it
+--------------------------------------------------
+1. To Avoid Breaking Existing Clients
 
+When your API is used by multiple clients (mobile apps, web apps, other services, etc.), any change in API structure (like response format, URL, or parameters) can break those clients.
 
+✅ Versioning allows you to release new functionality (like /api/v2/products)
+without breaking old clients still using /api/v1/products.
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace MyApi.Controllers.v1
+{
+    [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    public class ProductsController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult GetV1()
+        {
+            return Ok("Response from API version 1.0");
+        }
+    }
+}
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace MyApi.Controllers.v2
+{
+    [ApiController]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    public class ProductsController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult GetV2()
+        {
+            return Ok("Response from API version 2.0");
+        }
+    }
+}
+
+GET /api/v1/products → returns version 1 data
+GET /api/v2/products
+
+Other Ways to Version APIs
+
+URL path versioning (most common)
+/api/v1/products
+
+Query string versioning
+/api/products?api-version=1.0
+
+Header-based versioning
+Set a custom header:
+api-version: 1.0
 
 
 
