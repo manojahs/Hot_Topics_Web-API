@@ -48,8 +48,12 @@ Used only by Visual Studio / dotnet run during development to configure how the 
   }
 }
 
+REST (Representational State Transfer)
 
+It’s an architectural style used for building web services that communicate over HTTP.
 
+In simple terms:
+REST defines rules for how clients and servers should communicate using standard HTTP methods.
 
 
 
