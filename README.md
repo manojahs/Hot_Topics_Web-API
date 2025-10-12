@@ -1,6 +1,16 @@
 # Hot_Topics_Web-API
 ----------------------------
 ```
+Folder structure
+------------------
+Controller
+Appsettings.json
+LaunchSettings.json
+Program.cs
+WeatherForecast.cs
+
+
+
 
 | Feature                | Stateless Protocol         | Stateful Protocol             |
 | ---------------------- | -------------------------- | ----------------------------- |
