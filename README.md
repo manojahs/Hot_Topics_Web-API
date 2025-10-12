@@ -9,6 +9,57 @@ LaunchSettings.json
 Program.cs
 WeatherForecast.cs
 
+⚙️ 1. appsettings.json
+📘 Purpose
+Holds application configuration data — like connection strings, API keys, logging settings, and custom configuration values your code uses at runtime.
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=.;Database=MyAppDB;Trusted_Connection=True;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  },
+  "Jwt": {
+    "Key": "MySecretKey",
+    "Issuer": "myapp.com"
+  }
+}
+
+🚀 2. launchSettings.json
+
+Used only by Visual Studio / dotnet run during development to configure how the app starts — like which environment, port number, or URL to launch.
+
+{
+  "profiles": {
+    "MyApp": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+| Method                | Purpose                                               |
+| --------------------- | ----------------------------------------------------- |
+| `ConfigureServices()` | Register services (DI container)                      |
+| `Configure()`         | Define middleware pipeline for handling HTTP requests |
+
+
 
 
 
