@@ -1,6 +1,26 @@
 # Hot_Topics_Web-API
 ----------------------------
 ```
+Entity Framework in dotnet core
+1)code first approach
+2)Data first approach
+3)Model first approach
+
+1)Code first approach
+Usaully we will do migration
+2)Data first approach
+Usually we will dot scaffolding
+3)Model first approach
+You design entities visually using the EF Designer (EDMX).
+From the model, EF generates both:
+Database
+Entity classes
+When to use:
+When you prefer drag-and-drop visual design.
+When schema evolves from conceptual design.
+
+
+
 Folder structure
 ------------------
 Controller
