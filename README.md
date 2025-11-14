@@ -26,7 +26,7 @@ DBcontext class
 This is the class where it will be bridge between controller and db
 Helps for crud operation
 
-
+DBSet is a property of Dbcontext class that represents collection of entities in the database
 
 
 
