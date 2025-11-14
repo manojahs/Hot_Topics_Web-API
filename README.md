@@ -8,6 +8,10 @@ Entity Framework in dotnet core
 
 1)Code first approach
 Usaully we will do migration
+
+Add-Migration "first"
+Update-Database
+
 2)Data first approach
 Usually we will dot scaffolding
 3)Model first approach
