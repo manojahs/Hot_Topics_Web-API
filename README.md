@@ -19,6 +19,15 @@ When to use:
 When you prefer drag-and-drop visual design.
 When schema evolves from conceptual design.
 
+but dotnet core supports only db first approach and code first approach
+
+DBcontext class
+-------------------
+This is the class where it will be bridge between controller and db
+Helps for crud operation
+
+
+
 
 
 Folder structure
