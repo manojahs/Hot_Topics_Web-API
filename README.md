@@ -25,6 +25,11 @@ When schema evolves from conceptual design.
 
 but dotnet core supports only db first approach and code first approach
 
+DTO (data transfer object)
+-------------------------------
+client -> DTO -> API -> Domain model -> Database
+
+
 DBcontext class
 -------------------
 This is the class where it will be bridge between controller and db
