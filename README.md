@@ -1,6 +1,12 @@
 # Hot_Topics_Web-API
 ----------------------------
 ```
+The UI Layer(Presentation Layer) displays product pages and processes user clicks.
+The Business Layer manages pricing rules, such as discounts or promotions.
+The Data Access Layer(Repo Layer) fetches book details from the database.
+The Model Layer defines what a “Book” means in your system (title, author, price, etc.).
+The Integration Layer might connect to an outside payment gateway.
+
 Entity Framework in dotnet core
 1)code first approach
 2)Data first approach
